@@ -1,16 +1,28 @@
-import exampleVideoData from '../data/exampleVideoData.js';
+// import exampleVideoData from '../data/exampleVideoData.js';
 
-var VideoPlayer = (props) => (
-  <div className="video-player">
-    <div className="embed-responsive embed-responsive-16by9">
-      <iframe className="embed-responsive-item" src={props.video} allowFullScreen></iframe>
-    </div>
-    <div className="video-player-details">
-      <h3>{props.video.snippet.title}</h3>
-      <div>{props.video.snippet.description}</div>
-    </div>
-  </div>
-);
+class VideoPlayer extends React.Component {
+
+  constructor (props) {
+    // console.log(props);
+    super(props);
+    this.video = props.video;
+    this.state = {};
+  }
+
+  render () {
+    return (
+      <div className="video-player">
+        <div className="embed-responsive embed-responsive-16by9">
+          <iframe className="embed-responsive-item" src={video} allowFullScreen></iframe>
+        </div>
+        <div className="video-player-details">
+          <h3>{props.video.snippet.title}</h3>
+          <div>{props.video.snippet.description}</div>
+        </div>
+      </div>
+    );
+  }
+}
 
 // PropTypes tell other developers what `props` a component expects
 // Warnings will be shown in the console when the defined rules are violated
